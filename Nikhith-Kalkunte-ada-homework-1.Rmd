@@ -88,9 +88,12 @@ tax$Order_Primates$Suborder_Strepsirhini = list(Infraorder_Lorisiformes = 'Loris
 tax$Order_Primates$Suborder_Strepsirhini$Infraorder_Lorisiformes = list(Superfamily_Lorisoidea = c('Lorisidae','Galagidae'))
 tax$Order_Primates$Suborder_Strepsirhini$Infraorder_Lemuriformes = list(Superfamily_Lemuroidea = c('Cheirogaleidae','Lepilemuridae','Indriidae','Lemuridae','Daubentoniidae'))
 
-tax$Order_Primates$Suborder_Haplorhini = 
+tax$Order_Primates$Suborder_Haplorhini = list(Infraorder_Tarsiiformes = 'Tarsiiformes', Infraorder_Simiiformes = 'Simiiformes')
+tax$Order_Primates$Suborder_Haplorhini$Infraorder_Tarsiiformes = list(Superfamily_Tarsioidea = ' Tarsiidae')
+tax$Order_Primates$Suborder_Haplorhini$Infraorder_Simiiformes = list(Parvorder_Platyrrhini = 'Platyrrhini', Parvorder_Catarrhini = 'Catarrhini')
 
+tax$Order_Primates$Suborder_Haplorhini$Infraorder_Simiiformes$Parvorder_Platyrrhini = list(Superfamily_Ceboidea = c('Cebidae','Atelidae','Pitheciidae'))
 
-
+tax$Order_Primates$Suborder_Haplorhini$Infraorder_Simiiformes$Parvorder_Catarrhini = list(Superfamily_Hominoidea = c('Hylobatidae','Hominidae'), Superfamily_Cercopithecoidea = 'Cercopithecidae')
 
 ```

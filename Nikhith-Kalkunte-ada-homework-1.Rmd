@@ -1,0 +1,96 @@
+---
+title: "Nikhith-Kalkunte-ada-homework-1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+Challenge 1
+```{r}
+library(stringr)
+library(tidyverse)
+f = 'https://raw.githubusercontent.com/difiore/ada-2021-datasets/main/darwin.txt'
+chap = read.delim(f,sep = "\n")
+para = chap$CHAPTER.XV..RECAPITULATION.AND.CONCLUSION.
+length(para)
+print(para[34])
+
+split = str_split(para,' ')
+split = unlist(split)
+split = gsub("[[:punct:]]","",split)
+
+
+A = table(split)
+length(A) #number of unique words
+names(A[A==max(A)]) # most commonly used word
+length(which(A==1)) #number of words used exactly 1 time
+length(which(A>=5)) #number of words used 5 or more times
+
+final_quote = para[length(para)]
+final_quote = str_split(final_quote,' ')
+final_quote = unlist(final_quote)
+final_quote = gsub("[[:punct:]]","",final_quote)
+every_third = final_quote[c(rep(FALSE,2),TRUE)]
+print(every_third)
+every_third = sort(every_third,decreasing = TRUE)
+print(every_third)
+```
+
+Challenge 2
+```{r}
+t = c(35, 88, 42, 84, 81, 30 )
+city = c('Beijing', 'Lagos', 'Paris', 'Rio de Janeiro', 'San Juan', 'Toronto')
+names(t) = city
+t[1:3]
+t[c(3,5)]
+```
+
+Challenge 3
+```{r}
+m1 = matrix(data = seq(159,0),nrow = 8,ncol = 20)
+m1[5,2]
+m1[5:7,]
+
+m2 = m1[3:6,4:9]
+```
+The class of m2 is matrix. The mode is numeric. 
+
+Challenge 4
+```{r}
+a = array(seq(2,800,2),dim = c(5,5,4,4))
+```
+a[1, 1, 1, 2] returns 4
+
+a[2, 3, 2, ] returns 74 274 474 674
+
+a[1:5, 1:5, 3, 3] returns 
+[,1] [,2] [,3] [,4] [,5]
+[1,]  502  512  522  532  542
+[2,]  504  514  524  534  544
+[3,]  506  516  526  536  546
+[4,]  508  518  528  538  548
+[5,]  510  520  530  540  550
+
+
+Challenge 5
+```{r}
+tax = list(Order_Primates = 'Primates')
+tax$Order_Primates = list(Suborder_Strepsirhini = 'Strepsirhini',Suborder_Haplorhini = 'Haplorhini')
+tax$Order_Primates$Suborder_Strepsirhini = list(Infraorder_Lorisiformes = 'Lorisiformes',Infraorder_Lemuriformes = 'Lemuriformes')
+tax$Order_Primates$Suborder_Strepsirhini$Infraorder_Lorisiformes = list(Superfamily_Lorisoidea = c('Lorisidae','Galagidae'))
+tax$Order_Primates$Suborder_Strepsirhini$Infraorder_Lemuriformes = list(Superfamily_Lemuroidea = c('Cheirogaleidae','Lepilemuridae','Indriidae','Lemuridae','Daubentoniidae'))
+
+tax$Order_Primates$Suborder_Haplorhini = 
+
+
+
+
+```

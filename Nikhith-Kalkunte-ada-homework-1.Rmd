@@ -38,6 +38,7 @@ final_quote = para[length(para)]
 final_quote = str_split(final_quote,' ')
 final_quote = unlist(final_quote)
 final_quote = gsub("[[:punct:]]","",final_quote)
+final_quote
 every_third = final_quote[c(rep(FALSE,2),TRUE)]
 print(every_third)
 every_third = sort(every_third,decreasing = TRUE)
@@ -96,4 +97,11 @@ tax$Order_Primates$Suborder_Haplorhini$Infraorder_Simiiformes$Parvorder_Platyrrh
 
 tax$Order_Primates$Suborder_Haplorhini$Infraorder_Simiiformes$Parvorder_Catarrhini = list(Superfamily_Hominoidea = c('Hylobatidae','Hominidae'), Superfamily_Cercopithecoidea = 'Cercopithecidae')
 
+str(tax)
+
+platyrrhines = tax[[1]][[2]][[2]][1]
+# class is list, mode is list
+platyrrhines
+
+tax$Order_Primates$Suborder_Haplorhini$Infraorder_Tarsiiformes$Superfamily_Tarsioidea
 ```
